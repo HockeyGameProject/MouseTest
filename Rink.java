@@ -29,25 +29,7 @@ public class Rink extends JPanel implements Runnable, MouseMotionListener {
         setLayout(new BorderLayout());
         p1 = p;
 
-        addMouseMotionListener(new MouseAdapter() {
 
-            public void mousePressed(MouseEvent e){
-
-                double slope = (double) (e.getY() - p1.location.y) / (e.getX() - p1.location.x);
-                double angle = Math.tan( slope);
-                p1.setAngle(angle);
-
-            }
-
-
-            public void mouseMoved(MouseEvent e) {
-                double slope = (double) (e.getY() - p1.location.y) / (e.getX() - p1.location.x);
-                double angle = Math.tan(slope);
-                p1.setAngle((-1) *angle);
-                System.out.println(p1.getPoint());
-
-            }
-        });
 
     }
 
