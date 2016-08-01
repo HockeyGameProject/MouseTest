@@ -24,7 +24,7 @@ public class Rink extends JPanel implements Runnable, MouseMotionListener {
     Player p1;
 
     Rink(Player p) {
-        // set a preferred size for the custom panel.
+          // set a preferred size for the custom panel.
         setPreferredSize(new Dimension(1000,550));
         setLayout(new BorderLayout());
         p1 = p;
