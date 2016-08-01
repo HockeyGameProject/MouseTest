@@ -6,6 +6,7 @@ import java.awt.*;
  * @version 1
  */
 
+
 public class Player extends MovingObject {
 
     Color teamColor;

@@ -19,6 +19,7 @@ import java.util.ArrayList;
  */
 public class Rink extends JPanel implements Runnable, MouseMotionListener {
 
+
     Thread t;
     ArrayList<MovingObject> objects = new ArrayList<>();
     Player p1;
