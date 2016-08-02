@@ -1,4 +1,7 @@
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 
 /**
  * creates a player object
@@ -14,17 +17,28 @@ public class Player extends MovingObject {
 
     public Player(int id, Point point, int speed, double angle, int radius, Color color) {
         super(id, point, speed, angle, radius, color);
-        this.teamColor = color;
+        //this.teamColor = teamColor;
+        //addMouseMotionListener(new ControlPlayer());
 
     }
 
+    /*
+    class ControlPlayer implements MouseMotionListener{
 
-    public Player(int id, Point point, int speed, double angle, int radius, Color color, Color teamColor) {
-        super(id, point, speed, angle, radius, color);
-        this.teamColor = teamColor;
+       @Override
+       public void mouseDragged(MouseEvent e) {
 
+       }
 
-    }
+       @Override
+       public void mouseMoved(MouseEvent e) {
+           double slope = (double) (e.getY() - location.y) / (e.getX() - location.x);
+           double angle = Math.tan(slope);
+           setAngle((-1) *angle);
+           System.out.println(angle);
+       }
+   }*/
+
 
 
 
@@ -135,7 +149,7 @@ public class Player extends MovingObject {
     }
 
     @Override
-    public void updateLocation() {
+    public void updateLocation() {//overload this
         //location.x = (int) (location.x + getSpeed() * Math.sin(getAngle()));
         //location.y = (int) (location.y + getSpeed() * Math.cos(getAngle()));
         hitWalls();
@@ -143,6 +157,8 @@ public class Player extends MovingObject {
         location.x = (int) (location.x + getSpeed() * Math.sin(angle));
         location.y = (int) (location.y + getSpeed() * Math.cos(angle));
     }
+
+
 
      /*public void paintComponent(Graphics g){
         super.paintComponent(g);

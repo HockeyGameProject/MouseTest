@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @author Evan Mesa
  * @version 1
  */
-public class Rink extends JPanel implements Runnable, MouseMotionListener {
+public class Rink extends JPanel implements Runnable {
 
 
     Thread t;
@@ -45,8 +45,8 @@ public class Rink extends JPanel implements Runnable, MouseMotionListener {
                 double slope = (double) (e.getY() - p1.location.y) / (e.getX() - p1.location.x);
                 double angle = Math.tan(slope);
                 p1.setAngle((-1) *angle);
-                System.out.println(p1.getPoint());
-
+                System.out.println(p1.angle);
+                //create update location that can take an angle
             }
         });
 
@@ -168,7 +168,7 @@ public class Rink extends JPanel implements Runnable, MouseMotionListener {
         //
     }//test
 
-
+/*
     @Override
     public void mouseDragged(MouseEvent e) {
 
@@ -184,5 +184,5 @@ public class Rink extends JPanel implements Runnable, MouseMotionListener {
         double angle = Math.tan(slope);
         p.setAngle(angle);
         System.out.println("test");
-    }
+    }*/
 }
