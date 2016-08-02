@@ -24,6 +24,7 @@ public class Rink extends JPanel implements Runnable {
     ArrayList<MovingObject> objects = new ArrayList<>();
     Player p1;
 
+
     Rink(Player p) {
           // set a preferred size for the custom panel.
         setPreferredSize(new Dimension(1000,550));

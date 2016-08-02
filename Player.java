@@ -135,6 +135,7 @@ public class Player extends MovingObject {
 
     }
 
+
     public void reflection(){
         double reflectAngle;
         if(location.y <= topBoundary + 10 || location.y >= bottomBoundary -10){

@@ -21,7 +21,6 @@ public class Controller {
     public Controller(){
         ui      = new UI("Hockey");
 
-
         // Moving objects
         // CREATING PLAYERS AND GOALIES
         p1   = new Player(0,new Point(480, 275), 5, 3*Math.PI - 0.523599, 20, Color.RED);
