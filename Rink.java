@@ -43,10 +43,10 @@ public class Rink extends JPanel implements Runnable {
 
 
             public void mouseMoved(MouseEvent e) {
-                double slope = (double) (e.getY() - p1.location.y) / (e.getX() - p1.location.x);
-                double angle = Math.tan(slope);
-                p1.setAngle((-1) *angle);
-                System.out.println(p1.angle);
+
+                //p1.setAngle((-1) *angle);
+                //System.out.println(p1.angle);
+                p1.updateLocation(e);
                 //create update location that can take an angle
             }
         });

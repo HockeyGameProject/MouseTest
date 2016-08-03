@@ -151,13 +151,67 @@ public class Player extends MovingObject {
 
     @Override
     public void updateLocation() {//overload this
-        //location.x = (int) (location.x + getSpeed() * Math.sin(getAngle()));
+      /*  //location.x = (int) (location.x + getSpeed() * Math.sin(getAngle()));
         //location.y = (int) (location.y + getSpeed() * Math.cos(getAngle()));
         hitWalls();
 
         location.x = (int) (location.x + getSpeed() * Math.sin(angle));
         location.y = (int) (location.y + getSpeed() * Math.cos(angle));
+
+
+        //location.y = (location.y + 1);*/
     }
+
+
+    public void updateLocation(MouseEvent e) {//overload this
+        //double slope = (double) (e.getY() - location.y) / (e.getX() - location.x);
+        double angleTheta = Math.atan((e.getY() - location.y)/ (e.getX() - location.x));
+       // System.out.println(angleTheta);
+
+        System.out.println(angleTheta);
+        //angle = Math.atan(slope);
+
+        if(e.getX() > location.x){
+
+            //angle = Math.toRadians(angleTheta) + Math.PI;
+            location.x = (int) (location.x + 1 * Math.cos(angleTheta));
+            //location.x = (int) Math.sin(angleTheta);
+            //location.y = (int) Math.cos(angleTheta);
+
+            if(e.getY() > location.y){
+                //angleTheta++;
+               // angle = Math.toRadians(angleTheta);
+                location.y = (int) (location.y + 1 * Math.cos(angleTheta));
+            }
+            else if ( e.getY() < location.y){
+                //angleTheta--;
+                //angle = Math.toRadians(angleTheta);
+                location.y = (int) (location.y - 1 * Math.cos(angleTheta));
+            }
+        }
+        else if(e.getX() < location.x){
+
+            //angle = Math.toRadians(angleTheta) + Math.PI;
+            location.x = (int) (location.x - 1 * Math.cos(angleTheta));
+            //location.x = (int) Math.sin(angleTheta) * (-1);
+            //location.y = (int) Math.cos(angleTheta) * (-1);
+
+
+            if(e.getY() > location.y){
+                //angleTheta++;
+                //angle = Math.toRadians(angleTheta);
+                location.y = (int) (location.y + 1 * Math.cos(angleTheta));
+            }
+            else if ( e.getY() < location.y){
+                //angleTheta--;
+               // angle = Math.toRadians(angleTheta);
+                location.y = (int) (location.y - 1 * Math.cos(angleTheta));
+            }
+        }
+
+
+    }
+
 
 
 
